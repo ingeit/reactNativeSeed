@@ -8,10 +8,11 @@ import {
 } from "react-native";
 import Modal from "react-native-modal";
 import MapView from 'react-native-maps';
+import { Header, Item, Icon, Input, Button, Container } from "native-base";
 
 export default class RepoList extends Component {
   state = {
-    visibleModal: true
+    visibleModal: false
   };
 
   handleOnScroll = event => {
@@ -28,7 +29,14 @@ export default class RepoList extends Component {
 
   render() {
     return (
-      <View style={styles.map}>
+      <Container style={styles.mapConteiner}>
+        <Header transparent searchBar rounded style={{position:"absolute"}}>
+          <Item>
+            <Icon name="ios-search" />
+            <Input placeholder="Search" />
+            <Icon name="ios-people" />
+          </Item>
+        </Header>
         <MapView
           style={styles.map}
           initialRegion={{
@@ -63,7 +71,7 @@ export default class RepoList extends Component {
             </ScrollView>
           </View>
         </Modal>
-      </View>
+      </Container>
     );
   }
 }
@@ -78,6 +86,12 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     flex: 1
+  },
+  mapConteiner: {
+    width: '100%',
+    height: '100%',
+    flex: 1,
+    position:'relative'
   },
   button: {
     backgroundColor: "lightblue",
