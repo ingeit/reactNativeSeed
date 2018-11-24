@@ -41,7 +41,7 @@ export default class RepoList extends Component {
         </MapView>
         <Modal
           isVisible={this.state.visibleModal}
-          onSwipe={() => this.setState({ visibleModal: null })}
+          onSwipe={() => this.setState({ visibleModal: false })}
           swipeDirection="down"
           scrollTo={this.handleScrollTo}
           scrollOffset={this.state.scrollOffset}
@@ -57,7 +57,7 @@ export default class RepoList extends Component {
               <View key={1} style={styles.scrollableModalContent1}>
                 <Text>Scroll me up</Text>
               </View>
-              <View key={2} style={styles.scrollableModalContent1}>
+              <View key={2} style={styles.scrollableModalContent2}>
                 <Text>Scroll me up</Text>
               </View>
             </ScrollView>
